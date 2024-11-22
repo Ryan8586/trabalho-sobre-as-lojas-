@@ -1,0 +1,48 @@
+drop database loja_de_ropa;
+
+create database loja_de_ropa;
+
+
+USE loja_de_ropa;
+
+
+
+
+create table categoria(
+id_categoria int auto_increment primary key ,
+nome varchar (50)
+);
+create table produto(
+id_produto int auto_increment primary key,
+nome_loja  varchar(100),
+tamanho_ropa varchar(5),
+cor_ropa varchar(30),
+preco  decimal(10,2),
+estoque_ropa int,
+id_categoria int,
+id_fornecedor int);
+
+ 
+ 
+ create table cliente (
+id_venda int auto_increment primary key,
+id_cliente   int,
+data_venda  datetime,
+valor_total decimal(10,2)
+);
+
+
+create table intes_vendas (
+id_item int auto_increment primary key,
+id_venda int,
+id_produto int,
+quantidade_produto int,
+preco_unitario decimal(10,2)
+);
+create table fornecedores (
+id_fornecedor int auto_increment primary key,
+nome_fornecedor varchar(100),
+telefone varchar(15),
+endereco varchar(255)
+
+);
